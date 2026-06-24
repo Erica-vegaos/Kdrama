@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>人生韓劇</title>
+    <meta
+      name="description"
+      content="人生韓劇收集每個人最想推薦給所有人的一部韓劇，以及不暴雷的真心理由。"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header" aria-label="主要導覽">
+      <a class="brand" href="#top" aria-label="人生韓劇首頁">
+        <span class="brand-mark">K</span>
+        <span>人生韓劇</span>
+      </a>
+      <nav class="nav-links" aria-label="頁面區塊">
+        <a href="#ranking">排名</a>
+        <a href="#stories">故事</a>
+        <a href="#submit">投稿</a>
+      </nav>
+      <button class="icon-button" type="button" id="themeToggle" aria-label="切換色調" title="切換色調">
+        <span aria-hidden="true">◐</span>
+      </button>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="人生韓劇主視覺">
+        <div class="hero-copy">
+          <p class="eyebrow">每人一部，永遠只保留最真心的那一部</p>
+          <h1>人生韓劇</h1>
+          <p class="hero-line">替人生某個階段，找到一部被理解的作品。</p>
+          <div class="hero-actions" aria-label="主要動作">
+            <a class="button primary" href="#stories">
+              <span aria-hidden="true">↓</span>
+              看大家的理由
+            </a>
+            <a class="button secondary" href="#submit">
+              <span aria-hidden="true">+</span>
+              留下我的一部
+            </a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="產品規則摘要">
+          <div>
+            <span class="metric">50</span>
+            <span class="metric-label">冷啟動徵集目標</span>
+          </div>
+          <div>
+            <span class="metric">1</span>
+            <span class="metric-label">每人保留一部</span>
+          </div>
+          <div>
+            <span class="metric">100</span>
+            <span class="metric-label">推薦理由字數內</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section intro-band" aria-label="產品定位">
+        <div class="section-heading">
+          <p class="eyebrow">10 秒內要懂的事</p>
+          <h2>這不是片單，是很多人真心留下的一部。</h2>
+        </div>
+        <div class="principles">
+          <article>
+            <span class="principle-index">01</span>
+            <h3>真的值得看</h3>
+            <p>只收「最想推薦給所有人的一部」，理由短、情緒準、不暴雷。</p>
+          </article>
+          <article>
+            <span class="principle-index">02</span>
+            <h3>同劇合併</h3>
+            <p>同一部劇會成為一個劇頁，保留不同人的人生切面。</p>
+          </article>
+          <article>
+            <span class="principle-index">03</span>
+            <h3>先看故事</h3>
+            <p>第一次進站最重要的動作，是讀懂別人為什麼選它。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section ranking-section" id="ranking" aria-label="熱度排名">
+        <div class="section-heading row-heading">
+          <div>
+            <p class="eyebrow">熱度與排名</p>
+            <h2>現在最多人把人生交給這幾部</h2>
+          </div>
+          <div class="sponsor-pill" aria-label="30 天驗證指標">
+            <span>30 天指標</span>
+            <strong>第一筆贊助</strong>
+          </div>
+        </div>
+        <div class="ranking-grid" id="rankingGrid"></div>
+      </section>
+
+      <section class="section stories-section" id="stories" aria-label="推薦故事">
+        <div class="section-heading row-heading">
+          <div>
+            <p class="eyebrow">不暴雷理由</p>
+            <h2>用情緒找下一部</h2>
+          </div>
+          <div class="tag-tools" aria-label="情緒篩選">
+            <button class="tag active" type="button" data-filter="全部">全部</button>
+            <button class="tag" type="button" data-filter="療癒">療癒</button>
+            <button class="tag" type="button" data-filter="成長">成長</button>
+            <button class="tag" type="button" data-filter="戀愛">戀愛</button>
+            <button class="tag" type="button" data-filter="痛快">痛快</button>
+            <button class="tag ghost" type="button" id="requestTag">申請新 tag</button>
+          </div>
+        </div>
+        <div class="story-grid" id="storyGrid"></div>
+      </section>
+
+      <section class="submit-section" id="submit" aria-label="投稿人生韓劇">
+        <div class="submit-copy">
+          <p class="eyebrow">Google 登入投稿</p>
+          <h2>你永遠只能保留一部，但可以隨時改答案。</h2>
+          <p>
+            必填欄位：劇名、100 字內推薦理由、情緒 tag、公開身份、無劇透確認。
+            第二部會留給未來的贊助或任務條件。
+          </p>
+        </div>
+        <form class="submit-form" id="submitForm">
+          <label>
+            <span>劇名</span>
+            <input name="title" required maxlength="32" placeholder="例如：我的出走日記" />
+          </label>
+          <label>
+            <span>100 字內推薦理由</span>
+            <textarea
+              name="reason"
+              required
+              maxlength="100"
+              rows="4"
+              placeholder="不要講情節，只寫它怎麼接住你。"
+            ></textarea>
+          </label>
+          <div class="form-row">
+            <label>
+              <span>情緒 tag</span>
+              <select name="tag" required>
+                <option value="療癒">療癒</option>
+                <option value="成長">成長</option>
+                <option value="戀愛">戀愛</option>
+                <option value="痛快">痛快</option>
+              </select>
+            </label>
+            <label>
+              <span>身份</span>
+              <select name="identity" required>
+                <option value="匿名">匿名</option>
+                <option value="公開">公開</option>
+              </select>
+            </label>
+          </div>
+          <label class="check-row">
+            <input name="spoilerFree" type="checkbox" required />
+            <span>我確認只寫情緒，不寫情節與結局。</span>
+          </label>
+          <button class="button primary full" type="submit">
+            <span aria-hidden="true">G</span>
+            用 Google 投稿
+          </button>
+          <p class="form-note" id="formNote" role="status" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>人生韓劇 MVP：投稿驗證、故事閱讀、熱度排名、收藏按讚。</p>
+      <p>冷啟動來源：Dcard／Threads／IG 徵集。</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
